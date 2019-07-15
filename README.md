@@ -1,4 +1,4 @@
-[![Codeship Status for jodillion/runbuddy](https://app.codeship.com/projects/40e91e60-8969-0137-0314-3e01594af01a/status?branch=master)](https://app.codeship.com/projects/354558)
+[![Codeship Status for jodillion/runbuddy](https://app.codeship.com/projects/fade9320-8975-0137-bb91-3e01594af01a/status?branch=master)](https://app.codeship.com/projects/354573)
 
 # README
 
