@@ -1,6 +1,6 @@
-# README
-
 [![Codeship Status for jodillion/runbuddy](https://app.codeship.com/projects/40e91e60-8969-0137-0314-3e01594af01a/status?branch=master)](https://app.codeship.com/projects/354558)
+
+# README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
