@@ -21,7 +21,7 @@ describe('ProfileTile', () => {
   });
 
   it("Should render a link to the show page for that profile", () => {
-    expect(wrapper.find("Link").props()["to"]).toBe("/locations/1")
+    expect(wrapper.find("Link").props()["to"]).toBe("/profile/1")
   });
 
 });
