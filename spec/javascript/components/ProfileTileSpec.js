@@ -20,4 +20,8 @@ describe('ProfileTile', () => {
     expect(wrapper.find("h5").text()).toBe("Jo")
   });
 
-})
+  it("Should render a link to the show page for that profile", () => {
+    expect(wrapper.find("Link").props()["to"]).toBe("/locations/1")
+  });
+
+});
