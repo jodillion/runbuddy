@@ -5,7 +5,7 @@ const ProfileTile = props => {
 
   return(
     <div>
-      <h5><Link to={`/profile/${props.id}`}>{props.first_name}</Link></h5>
+      <h5><Link to={`/profiles/${props.id}`}>{props.first_name}</Link></h5>
     </div>
   )
 }
