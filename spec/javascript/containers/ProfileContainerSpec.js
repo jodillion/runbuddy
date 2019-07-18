@@ -27,7 +27,7 @@ describe("ProfilesContainer", () => {
     expect(wrapper.find(ProfileTile)).toBePresent();
   });
 
-  it("Should change the ProfilesContainer state to include all available locations", () => {
+  it("Should change the ProfilesContainer state to include all available profiles", () => {
     wrapper.setState({ profiles: [profile] });
     expect(wrapper.find(ProfileTile).props()).toEqual({
       id: "1",

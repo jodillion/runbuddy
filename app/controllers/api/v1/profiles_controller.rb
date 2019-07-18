@@ -12,4 +12,19 @@ class Api::V1::ProfilesController < ApplicationController
     render json: profile
   end
 
+  def create
+    profile = Profile.new(profile_params)
+    profile.user = current_user
+    if profile.save
+      render json: { profile: profile }
+    else
+      render json: {error: profile.errors.full_messages }
+    end
+  end
+
+  private
+
+  def profile_params
+    params.require(:profile).permit(:first_name, :age, :gender, :zipcode)
+  end
 end
