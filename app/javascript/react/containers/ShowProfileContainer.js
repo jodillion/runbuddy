@@ -10,7 +10,7 @@ class ShowProfileContainer extends React.Component {
   }
 
   componentDidMount(){
-    fetch(`/api/v1/locations/${this.props.match.params.id}`)
+    fetch(`/api/v1/profiles/${this.props.match.params.id}`)
     .then(response => response.json())
     .then(response => {
       this.setState({ chosenProfile: response })
