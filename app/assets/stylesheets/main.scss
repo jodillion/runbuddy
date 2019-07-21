@@ -1,0 +1,76 @@
+@import 'colors';
+
+body {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: lighter;
+
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+    color: $forest-green
+  }
+}
+
+.top-bar {
+  background-color: $white;
+
+  .menu-text {
+    background-color: $white;
+    color: $forest-green;
+    font-size: 30px;
+  }
+  li{
+    font-size: 20px;
+  }
+
+  ul.menu {
+    background-color: $white;
+
+    a:visited {
+      color: $lime;
+    }
+
+    a:hover {
+      color: $lime;
+    }
+
+    a:active {
+      color: $medium-green;
+      background-color: $white;
+    }
+  }
+}
+
+.callout {
+  background-color: $grey;
+  max-width: 1050px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  border-width: 5px;
+  border-color: $medium-green;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+}
+
+.box {
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 300px;
+  height: 100px;
+  text-align: center;
+  padding-top: 30px;
+  border-width: 5px;
+  border-color: $lime;
+  background-color: $white;
+
+  a {
+    color: $navy;
+  }
+}

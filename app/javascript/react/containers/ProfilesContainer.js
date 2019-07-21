@@ -39,9 +39,11 @@ class ProfilesContainer extends React.Component {
     })
 
     return(
-      <div>
-        <h1>Find your perfect running partner here!</h1>
-        {profiles}
+      <div className="callout">
+        <h2>"If you want to go far, go together" - African Proverb</h2>
+        <div className="wrapper">
+          {profiles}
+        </div>
       </div>
     )
   }
