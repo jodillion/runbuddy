@@ -1,7 +1,7 @@
 @import 'colors';
 
 body {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: lighter;
 
   h1 {
@@ -11,6 +11,10 @@ body {
     text-align: center;
     color: $forest-green
   }
+}
+
+.shoutout {
+  color: $white;
 }
 
 .top-bar {
@@ -73,4 +77,14 @@ body {
   a {
     color: $navy;
   }
+}
+
+.text-block {
+  position: absolute;
+  bottom: -150px;
+  right: 100px;
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+  padding: 70px;
 }
