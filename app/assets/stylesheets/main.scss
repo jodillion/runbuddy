@@ -6,15 +6,36 @@ body {
 
   h1 {
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
   }
+
   h2 {
     text-align: center;
     color: $forest-green
+  }
+
+  h5 {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  p{
+    font-family: 'Open Sans', sans-serif;
   }
 }
 
 .shoutout {
   color: $white;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+
+.subtext {
+  color: $white;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
 }
 
 .top-bar {
@@ -81,10 +102,37 @@ body {
 
 .text-block {
   position: absolute;
-  bottom: -150px;
+  bottom: -160px;
   right: 100px;
   background-color: black;
   opacity: 0.5;
-  color: white;
   padding: 70px;
+  font-weight: bold;
+}
+
+.start {
+  margin-left: 475px;
+  margin-top: 35px;
+}
+
+.steps {
+
+  li {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 30px;
+    font-size: 20px;
+  }
+}
+
+.logo {
+  padding-left: 10px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  margin-top: 50px;
+  background-color: $grey
 }
