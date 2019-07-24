@@ -5,28 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <ul class="menu simple">
-        <li class="menu-text"> <%= link_to 'Kiburi', homes_path %></li>
-        <li><%= link_to 'Browse Profiles', profiles_path %></li>
-      </ul>
-    </div>
+  <div data-sticky-container>
+    <div class="top-bar" data-sticky data-options="marginTop:0;" style="width:100%"s>
+      <div class="top-bar-left">
+        <ul class="menu simple">
+          <li class="logo"><img src="images/kiburilogo.png" alt="site logo" width="45" height="45"></li>
+          <li class="menu-text"> <%= link_to 'Kiburi', homes_path %></li>
+          <li><%= link_to 'Browse Profiles', profiles_path %></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+        </ul>
+      </div>
 
-    <div class="top-bar-right">
-      <ul class="menu">
-        <%- if current_user -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
-      </ul>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <%- if current_user -%>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <%- else -%>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <%- end -%>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -49,4 +54,13 @@
 
   <%= yield :extra_footer %>
 </body>
+<footer>
+  <div class="footer grid-x">
+    <div class="logo large-4 text-center cell">
+      <img src="images/kiburilogo.png" alt="site logo" width="45" height="45">
+      <h5 class="menu-text"> <%= link_to 'Kiburi', homes_path %></h5>
+      <p>Brought to you from Cincinnati, OH</p>
+    </div>
+  </div>
+</footer>
 </html>
