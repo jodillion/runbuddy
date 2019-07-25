@@ -119,7 +119,7 @@ body {
 
   @media screen and (max-width: 640px){
     right: 0px;
-    bottom: 420px;
+    bottom: 310px;
     padding: 10px;
   }
 }
@@ -129,8 +129,10 @@ body {
   margin-top: 35px;
 
   @media screen and (max-width: 640px){
-    margin-left: 160px;
+    position: relative;
+    margin-left: 100px;
     padding: -5px;
+    margin-top: 10px;
   }
 }
 
@@ -154,4 +156,20 @@ body {
   padding-top: 20px;
   margin-top: 50px;
   background-color: $grey
+}
+
+.desktop-pic {
+  display: block;
+
+  @media screen and (max-width: 640px){
+    display: none;
+  }
+}
+
+.mobile-pic {
+  display: none;
+
+  @media screen and (max-width: 640px){
+    display: block;
+  }
 }
