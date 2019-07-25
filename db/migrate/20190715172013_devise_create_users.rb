@@ -34,6 +34,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
 
       t.timestamps null: false
+
+      t.string :access_token, null: false
+      t.string :provider, null: false
+      t.integer :uid, null: false
+      t.string :strava_email, null: false
+      t.string :firstname
+      t.string :lastname
+      t.string :profile
+      t.string :city
+      t.string :state
     end
 
     add_index :users, :email,                unique: true

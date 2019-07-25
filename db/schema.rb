@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_15_224510) do
+ActiveRecord::Schema.define(version: 2019_07_15_172013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "profiles", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "age", null: false
-    t.string "zipcode", null: false
-    t.string "gender", null: false
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_profiles_on_user_id"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,6 +23,15 @@ ActiveRecord::Schema.define(version: 2019_07_15_224510) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "access_token", null: false
+    t.string "provider", null: false
+    t.integer "uid", null: false
+    t.string "strava_email", null: false
+    t.string "firstname"
+    t.string "lastname"
+    t.string "profile"
+    t.string "city"
+    t.string "state"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

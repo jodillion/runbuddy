@@ -17,18 +17,16 @@
         <ul class="menu simple">
           <li class="logo"><img src="images/kiburilogo.png" alt="site logo" width="45" height="45"></li>
           <li class="menu-text"> <%= link_to 'Kiburi', homes_path %></li>
-          <li><%= link_to 'Browse Profiles', profiles_path %></li>
           <li><a href="#how-it-works">How It Works</a></li>
         </ul>
       </div>
 
       <div class="top-bar-right">
         <ul class="menu">
-          <%- if current_user -%>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <%- if logged_in? -%>
+            <li><%= link_to 'Sign Out', logout_path %></li>
           <%- else -%>
-            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-            <li><%= link_to 'Sign In', new_user_session_path %></li>
+            <li><%= link_to 'Sign In', "/auth/strava" %></li>
           <%- end -%>
         </ul>
       </div>
