@@ -16,24 +16,18 @@ ActiveRecord::Schema.define(version: 2019_07_15_172013) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "access_token", null: false
     t.string "provider", null: false
     t.integer "uid", null: false
-    t.string "strava_email", null: false
     t.string "firstname"
     t.string "lastname"
     t.string "profile"
     t.string "city"
     t.string "state"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string "profile_medium"
+    t.string "sex"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
