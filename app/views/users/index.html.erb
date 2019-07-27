@@ -1,0 +1,10 @@
+<h2>Search for your ideal training partner here</h2>
+<br>
+
+<div class="callout">
+  <%@users.each do |user| %>
+    <img src=<%= user.profile %> alt="profile picture" width="150" height="150"/>
+    <p><%= user.firstname %> <%= user.lastname %> - <%= user.sex %></p>
+    <p><%= user.city %>, <%= user.state %></p>
+  <% end %>
+</div>
