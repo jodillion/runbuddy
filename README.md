@@ -1,28 +1,28 @@
 [![Codeship Status for jodillion/runbuddy](https://app.codeship.com/projects/fade9320-8975-0137-bb91-3e01594af01a/status?branch=master)](https://app.codeship.com/projects/354573)
 
-# README
+#Kiburi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Find your ideal running or cycling partner by browsing other people's Strava profiles. Send a match request and if you are matched in return, you will be able to chat in order to coordinate a time to meet up and go on a run or ride.
 
-Things you may want to cover:
+This React-Rails app allows users to sign in with Strava and then further
+customize their own profile.
 
-* Ruby version
+View it on Heroku at [Kiburi](www.kiburo.herokuapp.com)
 
-* System dependencies
+##Setup
 
-* Configuration
+Ruby Version 2.4.5
+Rails Version 5.2.3
 
-* Database creation
+**Dependencies**
+* omniauth-strava
+* strava-ruby-client
+* foundation-rails
 
-* Database initialization
+**Database Creation and Initialion**
+* $ rake db:create
+* $ rake db:migrate
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# runbuddy
-# runbuddy
+**Running the test suites**
+* $ rspec
+* $ yarn test
