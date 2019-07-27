@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
   root 'homes#index'
-  devise_for :users
-  resources :profiles, only: [:index, :show, :new]
   resources :homes, only: [:index]
+  resources :users, only: [:index]
 
-  namespace :api do
-    namespace :v1 do
-      resources :profiles, only: [:index, :show, :create]
-    end
-  end
+  get '/auth/strava/callback', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy'
 end

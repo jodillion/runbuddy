@@ -112,7 +112,7 @@ body {
 .text-block {
   position: absolute;
   bottom: 40px;
-  right: 80px;
+  right: 110px;
   background-color: rgba(black, 0.5);
   padding: 70px;
   font-weight: bold;
@@ -130,7 +130,7 @@ body {
 
   @media screen and (max-width: 640px){
     position: relative;
-    margin-left: 100px;
+    margin-left: 120px;
     padding: -5px;
     margin-top: 10px;
   }
