@@ -33,6 +33,7 @@ class UsersContainer extends React.Component {
         <UserTile
           key={user.id}
           id={user.id}
+          profile={user.profile}
           firstname={user.firstname}
           lastname={user.lastname}
           age={user.age}
