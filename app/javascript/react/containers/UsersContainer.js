@@ -11,8 +11,9 @@ class UsersContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/api/v3/athlete')
+    fetch('https://www.strava.com/api/v3/athletes/{id}/stats?page=&per_page=')
     .then((response) => {
+      binding.pry
       if (response.ok) {
         return response.json();
       } else {
