@@ -1,10 +1,14 @@
-<h2>Search for your ideal training partner here</h2>
+<h4>Search for your ideal training partner here</h4>
 <br>
 
-<div class="callout">
+<div>
   <%@users.each do |user| %>
-    <img src=<%= user.profile %> alt="profile picture" width="150" height="150"/>
-    <p><%= user.firstname %> <%= user.lastname %> - <%= user.sex %></p>
-    <p><%= user.city %>, <%= user.state %></p>
+    <div class="grid x">
+      <div class="athlete-profile small-3 cell">
+        <img src=<%= user.profile %> alt="profile picture" width="250" height="250"/>
+        <p><%= user.firstname %> <%= user.lastname %> - <%= user.sex %></p>
+        <p><%= user.city %>, <%= user.state %></p>
+      </div>
+    </div>
   <% end %>
 </div>

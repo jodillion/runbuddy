@@ -11,7 +11,14 @@ body {
 
   h2 {
     text-align: center;
-    color: $forest-green
+    color: $medium-green;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h4 {
+    text-align: center;
+    color: $forest-green;
+    font-family: 'Open Sans', sans-serif;
   }
 
   h5 {
@@ -46,6 +53,7 @@ body {
     color: $forest-green;
     font-size: 30px;
   }
+
   li{
     font-size: 20px;
   }
@@ -53,20 +61,16 @@ body {
   ul.menu {
     background-color: $white;
 
-    a:visited {
-      color: $lime;
-    }
-
     a:hover {
-      color: $lime;
+      color: $medium-green;
     }
 
-    a:active {
-      color: $medium-green;
-      background-color: $white;
+    a {
+      color: $lime;
     }
   }
 }
+
 
 .top-bar-right {
 
@@ -74,17 +78,10 @@ body {
     margin-left: 35%;
     margin-top: -32px;
   }
-
 }
 
-.callout {
+.athlete-profile {
   background-color: $grey;
-  max-width: 1050px;
-  display: block;
-  margin: auto;
-  margin-top: 20px;
-  border-width: 5px;
-  border-color: $medium-green;
 }
 
 .wrapper {
