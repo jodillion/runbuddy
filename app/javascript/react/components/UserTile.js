@@ -6,10 +6,9 @@ const UserTile = props => {
   return()
     <div class="grid x">
       <div class="athlete-profile small-3 cell">
-        <Link to={`/users/${props.id}`}>View Profile</Link>
-          <img src=user.profile alt="profile picture" width="250" height="250"/>
-          <p>{user.firstname} {user.lastname} - {user.sex}</p>
-          <p>{user.city}, {user.state}</p>
+        <img src=user.profile alt="profile picture" width="250" height="250"/>
+        <p>{user.firstname} {user.lastname} - {user.sex}</p>
+        <p>{user.city}, {user.state}</p>
       </div>
     </div>
   )
