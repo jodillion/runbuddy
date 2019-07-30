@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const UserTile = props => {
 
-  return()
+  return(
     <div class="grid x">
       <div class="athlete-profile small-3 cell">
         <img src={user.profile} alt="profile picture" width="250" height="250"/>
