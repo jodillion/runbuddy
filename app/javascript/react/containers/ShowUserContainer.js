@@ -10,7 +10,7 @@ class ShowUserContainer extends React.Component {
   }
 
   componentDidMount(){
-    fetch(`/api/v1/user/${this.props.match.params.id}`)
+    fetch('https://www.strava.com/api/v3/athletes/{id}/stats?page=&per_page=&KEY=strava_access_token')
     .then(response => response.json())
     .then(response => {
       this.setState({ chosenUser: response })

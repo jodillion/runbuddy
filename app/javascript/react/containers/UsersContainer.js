@@ -11,9 +11,8 @@ class UsersContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://www.strava.com/api/v3/athletes/{id}/stats?page=&per_page=')
+    fetch('api/v1/users')
     .then((response) => {
-      binding.pry
       if (response.ok) {
         return response.json();
       } else {
@@ -45,11 +44,10 @@ class UsersContainer extends React.Component {
     })
 
     return(
-      <div className="callout">
-        <div className="wrapper">
-          {users}
-        </div>
+      <div>
+        {users}
       </div>
+
     )
   }
 }
