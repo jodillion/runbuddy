@@ -10,11 +10,20 @@ class ShowUserContainer extends React.Component {
   }
 
   componentDidMount(){
-    fetch('https://www.strava.com/api/v3/athletes/{id}/stats?page=&per_page=&KEY=strava_access_token')
-    .then(response => response.json())
-    .then(response => {
-      this.setState({ chosenUser: response })
+    fetch(`api/v1/users/${this.props.match.params.id}`)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
     })
+    .then((responseBody) => {
+      return this.setState({ chosenUser: responseBody })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){

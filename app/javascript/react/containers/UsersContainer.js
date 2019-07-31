@@ -46,7 +46,10 @@ class UsersContainer extends React.Component {
 
     return(
       <div>
-        {users}
+        <h4 className="athlete-profile-header">FIND FOR YOUR IDEAL RUNNING PARTNER HERE</h4>
+        <div className="athlete-profile">
+          {users}
+        </div>
       </div>
 
     )
