@@ -2,6 +2,8 @@ class User < ApplicationRecord
   validates :access_token, :provider, :uid, presence: true
   validates :access_token, :uid, uniqueness: true
 
+  has_many :stats
+
   def self.find_or_create_from_auth_hash(auth)
     User.find_or_create_by(provider: auth["provider"], uid: auth["extra"]["raw_info"]["id"]) do |user|
       user.access_token = auth["credentials"]["token"]
