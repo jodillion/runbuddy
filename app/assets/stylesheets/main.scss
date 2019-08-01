@@ -67,6 +67,12 @@ body {
   }
 }
 
+.menu-text {
+
+  a {
+    color: $lime;
+  }
+}
 
 .top-bar-right {
 
@@ -79,7 +85,7 @@ body {
 .athlete-profile {
   background-color: white;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
 
   a {
@@ -95,6 +101,7 @@ body {
   margin-top: 30px;
   margin-bottom: 30px;
   border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(#000, 0.2);
 
   img{
     border-radius: 10px;

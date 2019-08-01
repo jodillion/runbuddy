@@ -12,7 +12,6 @@ class User < ApplicationRecord
       user.city = auth["extra"]["raw_info"]["city"]
       user.state = auth["extra"]["raw_info"]["state"]
       user.profile = auth["extra"]["raw_info"]["profile"]
-      user.profile_medium = auth["extra"]["raw_info"]["profile_medium"]
       user.sex = auth["extra"]["raw_info"]["sex"]
       user.save!
     end
