@@ -1,3 +1,5 @@
+require 'httparty'
+
 class Api::V1::UsersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
@@ -7,7 +9,10 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params["id"])
-    render json: user
+    athleteId = params[:id]
+    athlete = User.find(athleteId)
+    strava_info =  HTTParty.get("https://www.strava.com/api/v3/athletes/#{athlete.uid}/stats?access_token=#{athlete.access_token}")
+    render json: strava_info
   end
+
 end

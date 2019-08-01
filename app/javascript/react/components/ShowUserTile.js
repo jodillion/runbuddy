@@ -4,7 +4,7 @@ const ShowUserTile = props => {
 
   return(
     <div>
-      <p>{props.firstname}</p>
+      <p>I don't work yet</p>
     </div>
   )
 }

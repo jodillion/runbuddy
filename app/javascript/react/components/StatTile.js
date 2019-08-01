@@ -4,7 +4,9 @@ const StatTile = props => {
 
   return(
     <div>
-      <p>{props.recent_run_totals}</p>
+      <p>Recent miles run: {parseInt(props.recent_distance/1.609344/(1e3))} miles</p>
+      <p>Year to date miles run: {parseInt(props.ytd_distance/1.609344/(1e3))} miles</p>
+      <p>All time miles run: {parseInt(props.all_distance/1.609344/(1e3))} miles</p>
     </div>
   )
 }
