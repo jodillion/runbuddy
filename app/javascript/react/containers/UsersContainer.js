@@ -36,7 +36,6 @@ class UsersContainer extends React.Component {
           profile={user.profile}
           firstname={user.firstname}
           lastname={user.lastname}
-          age={user.age}
           sex={user.sex}
           city={user.city}
           state={user.state}
