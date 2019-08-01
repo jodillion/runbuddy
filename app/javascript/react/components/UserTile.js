@@ -2,6 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const UserTile = props => {
+  let location
+
+  if(props.city && props.state){
+    location = `${props.city}, ${props.state}`
+  }
 
   return(
       <div>
@@ -10,7 +15,7 @@ const UserTile = props => {
             <img src={props.profile} alt="profile picture" width="250" height="250"/>
             <div className="athlete-text">
               <p>{props.firstname} {props.lastname} - {props.age} {props.sex}</p>
-              <p>{props.city}, {props.state}</p>
+              <p>{location}</p>
             </div>
           </div>
         </Link>

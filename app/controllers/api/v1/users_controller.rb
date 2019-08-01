@@ -5,14 +5,22 @@ class Api::V1::UsersController < ApplicationController
 
   def index
     users = User.all
-    render json: users
+    render json: array_without_current_user(users)
   end
 
   def show
-    athleteId = params[:id]
-    athlete = User.find(athleteId)
-    strava_info =  HTTParty.get("https://www.strava.com/api/v3/athletes/#{athlete.uid}/stats?access_token=#{athlete.access_token}")
-    render json: strava_info
+    user = User.find(params[:id])
+    strava_info =  HTTParty.get("https://www.strava.com/api/v3/athletes/#{user.uid}/stats?access_token=#{user.access_token}")
+    render json: { strava_info: strava_info, user: user }
+  end
+
+  private
+
+  def array_without_current_user(users_array)
+    new_array = users_array.select do |user|
+      user != current_user
+    end
+    return new_array
   end
 
 end
