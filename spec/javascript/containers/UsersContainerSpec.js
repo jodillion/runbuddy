@@ -33,18 +33,4 @@ describe("UsersContainer", () => {
     expect(wrapper.find(UserTile)).toBePresent();
   });
 
-  it("Should render UserTiles with props that were passed to it", () => {
-    wrapper.setState({ users: [user] });
-    expect(wrapper.find(UserTile).props()).toEqual({
-      id: '1',
-      profile: 'https://pixel.nymag.com/imgs/daily/vulture/2017/07/18/18-arya-stark.w700.h700.jpg',
-      firstname: 'Arya',
-      lastname: 'Stark',
-      age: '12',
-      sex: 'F',
-      city: 'Winterfell',
-      state: 'The North'
-    });
-  });
-
 });
