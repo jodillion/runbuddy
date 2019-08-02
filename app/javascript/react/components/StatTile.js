@@ -8,10 +8,10 @@ const StatTile = props => {
         <h6>Last 4 Weeks</h6>
         <div>
           <p>Achievements: {props.achievement_count}</p>
-          <p>Average Distance/Week: {parseInt(props.recent_distance/1.609344/(1e3))} mi.</p>
-          <p>Average Runs/Week: {props.recent_count}</p>
-          <p>Average Time/Week: {parseInt(props.recent_time/3600)} hours</p>
-          <p>Average Elevation/Week: {parseInt(props.recent_elevation/0.0003048/(1e3))} ft.</p>
+          <p>Average Distance/Wk: {parseInt(props.recent_distance/1.609344/(1e3))} mi.</p>
+          <p>Average Runs/Wk: {props.recent_count}</p>
+          <p>Average Time/Wk: {parseInt(props.recent_time/3600)} hours</p>
+          <p>Average Elevation/Wk: {parseInt(props.recent_elevation/0.0003048/(1e3))} ft.</p>
         </div>
         <h6>Year to Date</h6>
         <div>

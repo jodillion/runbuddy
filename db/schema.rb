@@ -10,14 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_175933) do
+ActiveRecord::Schema.define(version: 2019_08_02_145135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "chats", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "body", null: false
+    t.bigint "user_id"
+    t.bigint "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "stats", force: :cascade do |t|
-    t.string "recent_runs"
-    t.string "ytd_runs"
+    t.string "age", null: false
+    t.string "desired_pace", null: false
+    t.string "up_to_distance", null: false
+    t.string "training_for"
+    t.string "preferred_surface"
+    t.string "recent_race1"
+    t.string "recent_race2"
+    t.string "recent_race3"
+    t.string "recent_race4"
+    t.string "recent_race5"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
