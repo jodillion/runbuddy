@@ -46,7 +46,6 @@ body {
 
   .menu-text {
     background-color: $white;
-    color: $forest-green;
     font-size: 30px;
   }
 
@@ -57,12 +56,26 @@ body {
   ul.menu {
     background-color: $white;
 
-    a:hover {
-      color: $medium-green;
+    .kiburi {
+
+      a:hover {
+        color: $lime;
+      }
+
+      a {
+        color: $medium-green;
+      }
     }
 
-    a {
-      color: $lime;
+    .lime {
+
+      a:hover {
+        color: $medium-green;
+      }
+
+      a {
+        color: $lime;
+      }
     }
   }
 }
@@ -70,6 +83,10 @@ body {
 .menu-text {
 
   a {
+    color: $forest-green;
+  }
+
+  a:hover {
     color: $lime;
   }
 }
@@ -137,7 +154,7 @@ body {
 .text-block {
   position: absolute;
   bottom: 40px;
-  right: 110px;
+  margin-left: 13%;
   background-color: rgba(black, 0.5);
   padding: 70px;
   font-weight: bold;
@@ -150,7 +167,7 @@ body {
 }
 
 .start {
-  margin-left: 475px;
+  margin-left: 400px;
   margin-top: 35px;
 
   @media screen and (max-width: 640px){
@@ -161,12 +178,17 @@ body {
   }
 }
 
+.how-it-works {
+  font-weight: bold;
+  padding-top: 55px;
+}
+
 .steps {
 
-  li {
+  p {
     font-family: 'Open Sans', sans-serif;
-    margin-left: 30px;
-    font-size: 20px;
+    text-align: center;
+    font-size: 22px;
   }
 }
 
@@ -243,4 +265,27 @@ body {
 .back {
   margin-top: 200px;
   margin-left: 90px;
+}
+
+.strava-omniauth {
+  max-width: 400px;
+  height: auto;
+  margin-left: 36%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.example-browse {
+  max-width: 900px;
+  height: auto;
+  margin-left: 18%;
+  margin-top: 10px;
+}
+
+.example-profile {
+  max-width: 550px;
+  height: auto;
+  margin-left: 31%;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
