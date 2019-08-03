@@ -42,7 +42,7 @@ Tests are written with RSpec, Capybara, Enzyme, and Jasmine.
 Sign up and create your profile by linking your account with Strava.
 
 
-![sign up](public/images/OmniAuth.png)\n\n
+![sign up](public/images/OmniAuth.png)
 
 
 
