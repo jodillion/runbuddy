@@ -31,15 +31,36 @@ Tests are written with RSpec, Capybara, Enzyme, and Jasmine.
 
 ## How Kiburi Works
 
-Sign up and create your profile by linking your account with Strava.\n\n
+Sign up and create your profile by linking your account with Strava.
+
+
 ![sign up](public/images/OmniAuth.png)\n\n
+
+
+
 Browse other people's profiles to help find your best match.
-![browse profiles](public/images/BrowseProfilesMedium.png)\n\n
-Click on each profile to see more details about that person.\n\n
-![example profile](public/images/MyProfile.png)\n\n
-When you find someone who might be a match, click "Contact Now".\n\n
-That person will receive a notification of a match, and can choose to accept or deny.\n\n
-If they accept, you will both be invited to a private chatroom where you can get to know each other and coordinate further details.\n\n
+
+
+![browse profiles](public/images/BrowseProfilesMedium.png)
+
+
+
+Click on each profile to see more details about that person.
+
+
+![example profile](public/images/MyProfile.png)
+
+
+
+When you find someone who might be a match, click "Contact Now".
+
+
+That person will receive a notification of a match, and can choose to accept or deny.
+
+
+If they accept, you will both be invited to a private chatroom where you can get to know each other and coordinate further details.
+
+
 Meet for a run with your new running partner!
 
 ## In Progress/Current Bugs
