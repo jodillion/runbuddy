@@ -13,6 +13,7 @@ View it on Heroku at [Kiburi](www.kiburo.herokuapp.com)
 ## Setup
 
 Ruby Version 2.4.5
+
 Rails Version 5.2.3
 
 **Dependencies**
@@ -21,12 +22,19 @@ Rails Version 5.2.3
 * foundation-rails
 
 **Database Creation and Initialion**
+
+
 `rake db:create`
+
 `rake db:migrate`
 
 **Running the test suites**
+
+
 Tests are written with RSpec, Capybara, Enzyme, and Jasmine.
+
 `rspec`
+
 `yarn test`
 
 ## How Kiburi Works
