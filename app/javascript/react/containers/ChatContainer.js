@@ -17,11 +17,13 @@ class ChatContainer extends Component {
   }
 
   componentDidMount() {
+    // debugger
     App.chatChannel = App.cable.subscriptions.create(
       // Info that is sent to the subscribed method
       {
         channel: "ChatChannel",
-        chat_id: this.props.current_user.id
+        chat_id: 1
+        // chat_id: this.props.current_user.id
         // currently this is hardcoded
         // If you had router, you could do:
         // chat_id: this.props.params["id"]
