@@ -14,7 +14,7 @@ const UserTile = props => {
           <div className="athlete-box">
             <img src={props.profile} alt="profile picture" width="250" height="250"/>
             <div className="athlete-text">
-              <p>{props.firstname} {props.lastname} - {props.age} {props.sex}</p>
+              <p>{props.firstname} {props.lastname} - {props.sex}</p>
               <p>{location}</p>
             </div>
           </div>
