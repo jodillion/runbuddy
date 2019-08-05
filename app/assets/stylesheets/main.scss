@@ -138,6 +138,7 @@ body {
   .photo {
     border-radius: 10px;
   }
+}
 
 .strava-omniauth {
   max-width: 400px;
@@ -162,26 +163,4 @@ body {
   margin-left: 31%;
   margin-top: 10px;
   margin-bottom: 30px;
-}
-
-.show-with-chat {
-  display: inline block;
-}
-
-.chat-box {
-  margin-top: 30px;
-  background-color: #F2F2F2;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(#000, 0.2);
-  margin-right: 70px;
-
-  .chat-header {
-    margin-top: 40px;
-  }
-}
-
-.chat-fields {
-  margin-top: 35px;
-  padding-right: 15px;
-  padding-left: 15px;
 }
