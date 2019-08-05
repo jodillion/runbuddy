@@ -20,7 +20,6 @@ class SearchBar extends Component {
   }
 
   handleSubmit(event) {
-    debugger
     event.preventDefault()
     const body = JSON.stringify({
       search_string: this.state.searchString
@@ -33,7 +32,6 @@ class SearchBar extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      debugger
       this.setState({ users: body })
     })
   }

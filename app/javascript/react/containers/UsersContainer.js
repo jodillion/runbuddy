@@ -14,7 +14,6 @@ class UsersContainer extends React.Component {
   componentDidMount() {
     fetch('api/v1/users')
     .then((response) => {
-      debugger
       if (response.ok) {
         return response.json();
       } else {

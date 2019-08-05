@@ -33,26 +33,18 @@ class ChatContainer extends Component {
       }
     })
     .then((data) => {
-      debugger
       return this.setState({ user: data })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
-    // debugger
     App.chatChannel = App.cable.subscriptions.create(
-      // Info that is sent to the subscribed method
       {
         channel: "ChatChannel",
         chat_id: 1
-        // chat_id: this.props.current_user.id
-        // currently this is hardcoded
-        // If you had router, you could do:
-        // chat_id: this.props.params["id"]
       },
       {
         connected: () => console.log("ChatChannel connected"),
         disconnected: () => console.log("ChatChannel disconnected"),
         received: data => {
-          // Data broadcasted from the chat channel
           console.log(data)
           this.handleMessageReceipt(data)
         }
@@ -73,7 +65,6 @@ class ChatContainer extends Component {
     let prepMessage = this.state.message
     let user_info = this.state.user
 
-    // Send info to the receive method on the back end
     App.chatChannel.send({
      message: prepMessage,
      current_user: user_info
@@ -88,7 +79,6 @@ class ChatContainer extends Component {
 
   render() {
     let messages = this.state.messages.map(message => {
-      debugger
       return(
         <Message
           key={message.messageId}
