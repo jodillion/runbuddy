@@ -160,7 +160,16 @@ body {
 .example-profile {
   max-width: 550px;
   height: auto;
-  margin-left: 31%;
+  margin: auto;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.example-chat {
+  height: auto;
+  margin: auto;
+  display: block;
   margin-top: 10px;
   margin-bottom: 30px;
 }

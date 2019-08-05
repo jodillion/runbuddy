@@ -56,7 +56,7 @@ Browse other people's profiles to help find your best match.
 Click on each profile to see more details about that person.
 
 
-![example profile](public/images/MyProfile.png)
+![example profile](public/images/examplestats.png)
 
 
 
@@ -66,7 +66,10 @@ When you find someone who might be a match, click "Contact Now".
 That person will receive a notification of a match, and can choose to accept or deny.
 
 
-If they accept, you will both be invited to a private chatroom where you can get to know each other and coordinate further details.
+If they accept, you will both be able to see to a chatroom where you can get to know each other and coordinate further details.
+
+
+![example chat](public/images/examplechat.png)
 
 
 Meet for a run with your new running partner!
