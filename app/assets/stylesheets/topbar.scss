@@ -1,0 +1,59 @@
+@import 'colors';
+
+.top-bar {
+  background-color: $white;
+
+  .menu-text {
+    background-color: $white;
+    font-size: 30px;
+  }
+
+  li{
+    font-size: 20px;
+  }
+
+  ul.menu {
+    background-color: $white;
+
+    .kiburi {
+
+      a:hover {
+        color: $lime;
+      }
+
+      a {
+        color: $medium-green;
+      }
+    }
+
+    .lime {
+
+      a:hover {
+        color: $medium-green;
+      }
+
+      a {
+        color: $lime;
+      }
+    }
+  }
+}
+
+.menu-text {
+
+  a {
+    color: $forest-green;
+  }
+
+  a:hover {
+    color: $lime;
+  }
+}
+
+.top-bar-right {
+
+  @media screen and (max-width: 640px){
+    margin-left: 35%;
+    margin-top: -32px;
+  }
+}

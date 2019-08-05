@@ -33,122 +33,11 @@ body {
   font-weight: bold;
 }
 
-
 .subtext {
   color: $white;
   text-align: center;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
-}
-
-.top-bar {
-  background-color: $white;
-
-  .menu-text {
-    background-color: $white;
-    font-size: 30px;
-  }
-
-  li{
-    font-size: 20px;
-  }
-
-  ul.menu {
-    background-color: $white;
-
-    .kiburi {
-
-      a:hover {
-        color: $lime;
-      }
-
-      a {
-        color: $medium-green;
-      }
-    }
-
-    .lime {
-
-      a:hover {
-        color: $medium-green;
-      }
-
-      a {
-        color: $lime;
-      }
-    }
-  }
-}
-
-.menu-text {
-
-  a {
-    color: $forest-green;
-  }
-
-  a:hover {
-    color: $lime;
-  }
-}
-
-.top-bar-right {
-
-  @media screen and (max-width: 640px){
-    margin-left: 35%;
-    margin-top: -32px;
-  }
-}
-
-.athlete-profile {
-  background-color: white;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-
-  a {
-    color: $navy;
-  }
-}
-
-.athlete-box {
-  border-radius: 10px;
-  max-width: 250px;
-  margin: auto;
-  background-color: #F2F2F2;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 4px rgba(#000, 0.2);
-  height: 330px;
-
-  img{
-    border-radius: 10px;
-    margin-bottom: 15px;
-    width: 250px;
-    height: 250px;
-  }
-
-  img:hover {
-    filter: brightness(70%);
-  }
-
-  .athlete-text {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    text-align: center;
-    padding-bottom: 15px;
-  }
-
-  p {
-    margin-bottom: 0px;
-  }
-}
-
-.athlete-profile-header {
-  background-color: #F2F2F2;
-  margin: auto;
-  padding: 20px;
-  margin-bottom: 30px;
-  color: $forest-green;
 }
 
 .text-block {
@@ -167,7 +56,9 @@ body {
 }
 
 .start {
-  margin-left: 400px;
+  margin: auto;
+  display: block;
+  max-width: 180px;
   margin-top: 35px;
 
   @media screen and (max-width: 640px){
@@ -221,56 +112,11 @@ body {
   }
 }
 
-.athlete-stats {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.show-athlete-profile {
-  margin-left: 90px;
-  padding-top: 25px;
-}
-
-.show-athlete-stats {
-  margin-left: 90px;
-  padding-top: 25px;
-  padding-bottom: 50px;
-}
-
-.show-athlete-profile-tile {
-
-  .athlete-info {
-    text-align: center;
-    padding-top: 15px;
-  }
-
-  .photo {
-    border-radius: 10px;
-  }
-}
-
-.show-page {
-  margin: auto;
-  margin-top: 30px;
-  max-width: 800px;
-  background-color: #F2F2F2;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(#000, 0.2);
-
-  h4 {
-    padding-top: 40px;
-  }
-}
-
-.back {
-  margin-top: 200px;
-  margin-left: 90px;
-}
-
 .strava-omniauth {
   max-width: 400px;
   height: auto;
-  margin-left: 36%;
+  margin: auto;
+  display: block;
   margin-top: 10px;
   margin-bottom: 30px;
 }
@@ -278,7 +124,8 @@ body {
 .example-browse {
   max-width: 900px;
   height: auto;
-  margin-left: 18%;
+  margin: auto;
+  display: block;
   margin-top: 10px;
 }
 

@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   root 'homes#index'
   resources :homes, only: [:index]
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :show]
+      post 'users/search', to: 'users#search'
     end
   end
 end
