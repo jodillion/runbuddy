@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import UserTile from '../components/UserTile'
+import SearchBar from '../components/SearchBar'
 
 class UsersContainer extends React.Component {
   constructor(props){
@@ -47,6 +48,7 @@ class UsersContainer extends React.Component {
     return(
       <div>
         <h4 className="athlete-profile-header">FIND FOR YOUR IDEAL RUNNING PARTNER HERE</h4>
+        <SearchBar />
         <div className="athlete-profile">
           {users}
         </div>

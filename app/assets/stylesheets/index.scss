@@ -1,0 +1,53 @@
+@import 'colors';
+
+.athlete-profile {
+  background-color: white;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+
+  a {
+    color: $navy;
+  }
+}
+
+.athlete-box {
+  border-radius: 10px;
+  max-width: 250px;
+  margin: auto;
+  background-color: #F2F2F2;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(#000, 0.2);
+  height: 330px;
+
+  img{
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: 250px;
+    height: 250px;
+  }
+
+  img:hover {
+    filter: brightness(70%);
+  }
+
+  .athlete-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.athlete-profile-header {
+  background-color: #F2F2F2;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: $forest-green;
+}

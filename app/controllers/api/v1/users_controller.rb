@@ -19,6 +19,11 @@ class Api::V1::UsersController < ApplicationController
     render json: {user_id: current_user.id, firstname: current_user.firstname}
   end
 
+  def search
+    users = User.where("firstname ILIKE ? OR lastname ILIKE ? OR city ILIKE ? OR state ILIKE ? OR sex ILIKE ?", "%#{params['search_string']}%", "%#{params['search_string']}%", "%#{params['search_string']}%", "%#{params['search_string']}%", "%#{params['search_string']}%")
+    render json: array_without_current_user(users)
+  end
+
   private
 
   def array_without_current_user(users_array)

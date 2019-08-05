@@ -1,0 +1,12 @@
+@import 'colors';
+
+.search {
+  max-width: 700px;
+  margin-left: 32%;
+}
+
+.search-results {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+}

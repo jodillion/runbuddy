@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   root 'homes#index'
   resources :homes, only: [:index]
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "users/current" => "users#the_current_user"
       resources :users, only: [:index, :show]
+      post 'users/search', to: 'users#search'
     end
   end
 end
