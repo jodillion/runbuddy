@@ -10,8 +10,7 @@ class ShowUserContainer extends React.Component {
       recent_run_totals: {},
       all_run_totals: {},
       ytd_run_totals: {},
-      user: {},
-      current_user: {}
+      user: {}
     }
   }
 
@@ -28,11 +27,10 @@ class ShowUserContainer extends React.Component {
     })
     .then((responseBody) => {
       return this.setState({
-        recent_run_totals: responseBody.user.strava_info.recent_run_totals,
-        all_run_totals: responseBody.user.strava_info.all_run_totals,
-        ytd_run_totals: responseBody.user.strava_info.ytd_run_totals,
-        user: responseBody.user.user,
-        current_user: responseBody.current_user
+        recent_run_totals: responseBody.strava_info.recent_run_totals,
+        all_run_totals: responseBody.strava_info.all_run_totals,
+        ytd_run_totals: responseBody.strava_info.ytd_run_totals,
+        user: responseBody.user
        })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -82,8 +80,6 @@ class ShowUserContainer extends React.Component {
         <div className="chat-box small-4 cell">
           <h4 className="chat-header">Chat with {this.state.user.firstname} now:</h4>
           <ChatContainer
-            key={this.state.current_user.id}
-            current_user={this.state.current_user}
           />
         </div>
       </div>

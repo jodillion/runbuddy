@@ -7,7 +7,8 @@ class ChatContainer extends Component {
     super(props);
     this.state = {
       messages: [],
-      message: ''
+      message: '',
+      user: {}
     }
 
     this.handleMessageReceipt = this.handleMessageReceipt.bind(this);
@@ -17,6 +18,25 @@ class ChatContainer extends Component {
   }
 
   componentDidMount() {
+    fetch('/api/v1/users/current', {
+      credentials: 'same-origin',
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then((data) => {
+      debugger
+      return this.setState({ user: data })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
     // debugger
     App.chatChannel = App.cable.subscriptions.create(
       // Info that is sent to the subscribed method
@@ -51,7 +71,7 @@ class ChatContainer extends Component {
   handleFormSubmit(event) {
     event.preventDefault();
     let prepMessage = this.state.message
-    let user_info = this.state.current_user
+    let user_info = this.state.user
 
     // Send info to the receive method on the back end
     App.chatChannel.send({
@@ -68,10 +88,11 @@ class ChatContainer extends Component {
 
   render() {
     let messages = this.state.messages.map(message => {
+      debugger
       return(
         <Message
           key={message.messageId}
-          firstname={message.current_user.firstname}
+          firstname={message.user.firstname}
           message={message.message}
         />
       )

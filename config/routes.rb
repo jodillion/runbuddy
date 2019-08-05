@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      get "users/current" => "users#the_current_user"
       resources :users, only: [:index, :show]
-      get "users/current" => "users#current_user"
     end
   end
 end
