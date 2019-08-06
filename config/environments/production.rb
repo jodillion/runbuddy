@@ -42,10 +42,9 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
-  config.action_cable.url = 'wss://kiburi.herokuapp.com/'
-  config.action_cable.allowed_request_origins = [ 'http://kiburi.herokuapp.com' ]
-  # config.action_cable.allowed_request_origins = [ 'http://kiburi.herokuapp.com', /http:\/\/example.*/
- ]
+  # config.action_cable.url = 'wss://kiburi.herokuapp.com/'
+  config.web_socket_server_url = "wss://kiburi.herokuapp.com/cable" 
+  config.action_cable.allowed_request_origins = [ 'http://kiburi.herokuapp.com', 'https://kiburi.herokuapp.com' ]
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
