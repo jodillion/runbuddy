@@ -18,7 +18,9 @@
           <li class="logo"><img src="/images/kiburilogo.png" alt="site logo" width="45" height="45"></li>
           <li class="menu-text kiburi"> <%= link_to 'Kiburi', homes_path %></li>
           <li class="lime"><a href="/homes#how-it-works">How It Works</a></li>
+          <%- if logged_in? -%>
           <li class="lime"> <%= link_to 'Browse Profiles', users_path %></li>
+          <%- end -%>
         </ul>
       </div>
 
