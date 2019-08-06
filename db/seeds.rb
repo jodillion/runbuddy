@@ -5,5 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Profile.create!(first_name: 'Jo', age: '27', zipcode: '45244', gender: 'F', user_id: 2)
-Profile.create(first_name: 'Steph', age: '25', zipcode: '45244', gender: 'F', user_id: 3)

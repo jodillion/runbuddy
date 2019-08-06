@@ -56,6 +56,7 @@ class ShowUserContainer extends React.Component {
                 />
               </div>
               <a href="/users" className="button yellow back cell">BACK</a>
+              <a href="/users" className="button yellow add-friend cell">SEND FRIEND REQUEST</a>
             </div>
             <div className="show-athlete-stats cell small-4">
               <StatTile
