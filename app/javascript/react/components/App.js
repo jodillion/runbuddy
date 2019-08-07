@@ -10,7 +10,6 @@ const App = (props) => {
       <Switch>
         <Route exact path="/users" component={UsersContainer} />
         <Route exact path="/users/:id" component={ShowUserContainer} />
-        <Route exact path="/chats/:id" component={ChatContainer}/>
       </Switch>
     </BrowserRouter>
   )

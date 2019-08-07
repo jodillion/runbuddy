@@ -1,7 +1,7 @@
 import React from 'react'
 import StatTile from '../components/StatTile'
 import ShowUserTile from '../components/ShowUserTile'
-import ChatContainer from './ChatContainer'
+import FriendStatusContainer from './FriendStatusContainer'
 
 class ShowUserContainer extends React.Component {
   constructor(props) {
@@ -10,8 +10,11 @@ class ShowUserContainer extends React.Component {
       recent_run_totals: {},
       all_run_totals: {},
       ytd_run_totals: {},
-      user: {}
+      user: {},
+      friendship: null,
+      friendships: []
     }
+    this.sendFriendRequest = this.sendFriendRequest.bind(this)
   }
 
   componentDidMount(){
@@ -30,8 +33,34 @@ class ShowUserContainer extends React.Component {
         recent_run_totals: responseBody.strava_info.recent_run_totals,
         all_run_totals: responseBody.strava_info.all_run_totals,
         ytd_run_totals: responseBody.strava_info.ytd_run_totals,
-        user: responseBody.user
+        user: responseBody.user,
+        friendships: responseBody.friendships
        })
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+  sendFriendRequest(item) {
+    fetch(`/api/v1/users/${this.state.user.id}/friendships`, {
+      credentials: 'same-origin',
+      method: 'POST',
+      body: JSON.stringify(item),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((response) => {
+      if (response.ok) {
+        return response.json()
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error)
+      }
+    })
+    .then((responseBody) => {
+      this.setState({ friendship: responseBody })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -56,7 +85,6 @@ class ShowUserContainer extends React.Component {
                 />
               </div>
               <a href="/users" className="button yellow back cell">BACK</a>
-              <a href="/users" className="button yellow add-friend cell">SEND FRIEND REQUEST</a>
             </div>
             <div className="show-athlete-stats cell small-4">
               <StatTile
@@ -78,9 +106,12 @@ class ShowUserContainer extends React.Component {
             </div>
           </div>
         </div>
-        <div className="chat-box small-4 cell">
-          <h4 className="chat-header">Chat with {this.state.user.firstname} now:</h4>
-          <ChatContainer
+        <div className="friend-status-container small-4 cell">
+          <FriendStatusContainer
+            userFirstname={this.state.user.firstname}
+            userId={this.state.user.id}
+            sendFriendRequest={this.sendFriendRequest}
+            friendships={this.state.friendships}
           />
         </div>
       </div>

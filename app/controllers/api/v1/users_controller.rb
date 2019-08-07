@@ -2,6 +2,8 @@ require 'httparty'
 
 class Api::V1::UsersController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
+  before_action :authenticate_user
+  protect_from_forgery with: :null_session
 
   def index
     users = User.all
@@ -11,12 +13,14 @@ class Api::V1::UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     strava_info =  HTTParty.get("https://www.strava.com/api/v3/athletes/#{user.uid}/stats?access_token=#{user.access_token}")
-    render json: {strava_info: strava_info, user: user}
+    all_strava_info = {strava_info: strava_info, user: user, friendships: current_user.friendships}
+    render json: all_strava_info
   end
 
   def the_current_user
     current_user ||= User.find_by_id(session[:user_id])
-    render json: {user_id: current_user.id, firstname: current_user.firstname}
+    returned_current_user = {user_id: current_user.id, firstname: current_user.firstname}
+    render json: returned_current_user
   end
 
   def search
@@ -31,6 +35,12 @@ class Api::V1::UsersController < ApplicationController
       user != current_user
     end
     return new_array
+  end
+
+  def authenticate_user
+    if !logged_in?
+      render json: {message: "You do not have access to this page."}, status: 403
+    end
   end
 
 end

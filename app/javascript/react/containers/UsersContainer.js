@@ -12,7 +12,14 @@ class UsersContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetch('api/v1/users')
+    fetch('api/v1/users', {
+      credentials: 'same-origin',
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -23,7 +30,7 @@ class UsersContainer extends React.Component {
       }
     })
     .then((responseBody) => {
-      return this.setState({ users: responseBody })
+      return this.setState({ users: responseBody.users })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
