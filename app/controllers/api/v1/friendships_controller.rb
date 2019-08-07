@@ -7,7 +7,6 @@ class Api::V1::FriendshipsController < ApplicationController
   end
 
   def create
-    binding.pry
     friendship = Friendship.new(user_id: params[:friendship][:user_id], friend_id: params[:friendship][:friend_id])
     payload = {"friendship": friendship}
     if friendship.save
