@@ -12,3 +12,16 @@ if(this.props.friendship.length = 0) {
   visibleContainer = <ChatContainer
                       currentUser={this.state.currentUser.id}
                       />
+
+handleAcceptRequest(event) {
+  event.preventDefault()
+
+}
+
+handlePendingRequest(event) {
+
+}
+
+handleDenyRequest(event) {
+
+}

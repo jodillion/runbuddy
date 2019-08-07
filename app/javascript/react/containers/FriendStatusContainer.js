@@ -46,31 +46,18 @@ class FriendStatusContainer extends React.Component {
     this.props.sendFriendRequest(formPayload)
   }
 
-  handleAcceptRequest(event) {
-    event.preventDefault()
-
-  }
-
-  handlePendingRequest(event) {
-
-  }
-
-  handleDenyRequest(event) {
-
-  }
-
   render() {
-    debugger
     let visibleContainer;
 
-    if (this.props.friendships[0].user_id == null) {
+    if (this.props.friendships.length == 0 || this.props.friendships[0].friend_id != this.props.userId) {
       visibleContainer = <SendFriendRequest
                           handlerFunction={this.handleSendFriendRequest} />
-    } else if (this.props.friendships[0].user_id == this.state.currentUser.id) {
+    } else if (this.props.friendships[0].friend_id == this.props.userId) {
       visibleContainer = <ChatContainer
                           userFirstname={this.props.userFirstname}
                           currentUser={this.state.currentUser.id} />
     }
+    console.log(this.props)
 
     return(
       <div>

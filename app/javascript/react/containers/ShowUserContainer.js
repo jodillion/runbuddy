@@ -41,7 +41,6 @@ class ShowUserContainer extends React.Component {
   }
 
   sendFriendRequest(item) {
-    debugger
     fetch(`/api/v1/users/${this.state.user.id}/friendships`, {
       credentials: 'same-origin',
       method: 'POST',
@@ -52,7 +51,6 @@ class ShowUserContainer extends React.Component {
       }
     })
     .then((response) => {
-      debugger
       if (response.ok) {
         return response.json()
       } else {
@@ -62,7 +60,6 @@ class ShowUserContainer extends React.Component {
       }
     })
     .then((responseBody) => {
-      debugger
       this.setState({ friendship: responseBody })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
