@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_131734) do
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "friend_id", null: false
+    t.boolean "active", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

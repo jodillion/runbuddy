@@ -89,7 +89,8 @@ class ChatContainer extends Component {
     }, this);
 
     return(
-      <div className='chat-fields'>
+      <div className='chat-box'>
+        <h4 className="chat-header">Chat with {this.props.userFirstname} now:</h4>
         <div className='callout messages' id='chatWindow'>
           {messages}
         </div>
