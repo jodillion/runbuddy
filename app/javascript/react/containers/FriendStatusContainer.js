@@ -11,12 +11,24 @@ class FriendStatusContainer extends React.Component {
       friendshipStatus: false
     }
     this.handleSendFriendRequest = this.handleSendFriendRequest.bind(this)
-    this.checkFriendshipStatus = this.checkFriendshipStatus.bind(this)
   }
 
-  componentDidMount() {
+  componentWillReceiveProps(nextProps) {
     debugger
+    let friendships = []
+    let userId = 0
 
+    if(nextProps.friendships.length != 0) {
+      debugger
+      userId = nextProps.userId
+      friendships = nextProps.friendships
+
+      friendships.forEach((friendship) => {
+        debugger
+        if(userId == friendship.friend_id)
+          this.setState({ friendshipStatus: true })
+      })
+    }
   }
 
   handleSendFriendRequest(event) {
@@ -26,24 +38,6 @@ class FriendStatusContainer extends React.Component {
       friend_id: this.props.userId
     }
     this.props.sendFriendRequest(formPayload)
-  }
-
-  checkFriendshipStatus(){
-    debugger
-    let friendships = []
-    let currentUserId = 0
-
-    if(this.props.friendships.length != 0) {
-      debugger
-      currentUserId = this.props.currentUserId
-      friendships = this.props.friendships
-
-      friendships.forEach((friendship) => {
-        debugger
-        if(currentUserId == friendship.user_id || currentUserId == friendship.friend_id)
-          this.setState({ friendshipStatus: true })
-      })
-    }
   }
 
   render() {

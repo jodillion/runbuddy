@@ -19,6 +19,7 @@ class ShowUserContainer extends React.Component {
   }
 
   componentDidMount(){
+    debugger
     fetch(`/api/v1/users/${this.props.match.params.id}`, { credentials: 'same-origin' })
     .then((response) => {
       if (response.ok) {
