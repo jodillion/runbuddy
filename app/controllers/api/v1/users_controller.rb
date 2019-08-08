@@ -13,7 +13,7 @@ class Api::V1::UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     strava_info =  HTTParty.get("https://www.strava.com/api/v3/athletes/#{user.uid}/stats?access_token=#{user.access_token}")
-    all_strava_info = {strava_info: strava_info, user: user, friendships: current_user.friendships}
+    all_strava_info = {strava_info: strava_info, user: user, friendships: current_user.friendships, currentuser: current_user}
     render json: all_strava_info
   end
 
