@@ -60,10 +60,14 @@ Click on each profile to see more details about that person.
 
 
 
-When you find someone who might be a match, click "Contact Now".
+When you find someone who might be a match, click "SEND MATCH REQUEST".
 
 
-That person will receive a notification of a match, and can choose to accept or deny.
+![send match request](public/images/sendrequest.png)
+
+
+
+That person can then choose to accept or deny the match request.
 
 
 If they accept, you will both be able to see to a chatroom where you can get to know each other and coordinate further details.
