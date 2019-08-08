@@ -30,8 +30,9 @@ class FriendStatusContainer extends React.Component {
 
   handleSendFriendRequest(event) {
     event.preventDefault()
+    debugger
     let formPayload = {
-      user_id: this.state.currentUser.id,
+      user_id: this.props.currentUserId,
       friend_id: this.props.userId
     }
     this.props.sendFriendRequest(formPayload)
