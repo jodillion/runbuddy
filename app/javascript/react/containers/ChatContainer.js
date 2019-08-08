@@ -18,24 +18,6 @@ class ChatContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('/api/v1/users/current', {
-      credentials: 'same-origin',
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' }
-    })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then((data) => {
-      return this.setState({ user: data })
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
     App.chatChannel = App.cable.subscriptions.create(
       {
         channel: "ChatChannel",
@@ -63,13 +45,12 @@ class ChatContainer extends Component {
   handleFormSubmit(event) {
     event.preventDefault();
     let prepMessage = this.state.message
-    let user_info = this.state.user
+    let user_info = {id: this.props.currentUser.id, firstname: this.props.currentUser.firstname}
 
     App.chatChannel.send({
      message: prepMessage,
      current_user: user_info
     })
-
     this.handleClearForm();
   }
 

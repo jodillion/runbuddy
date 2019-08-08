@@ -19,7 +19,6 @@ class ShowUserContainer extends React.Component {
   }
 
   componentDidMount(){
-    debugger
     fetch(`/api/v1/users/${this.props.match.params.id}`, { credentials: 'same-origin' })
     .then((response) => {
       if (response.ok) {
@@ -116,6 +115,7 @@ class ShowUserContainer extends React.Component {
             sendFriendRequest={this.sendFriendRequest}
             friendships={this.state.friendships}
             currentUserId={this.state.currentUser.id}
+            currentUser={this.state.currentUser}
           />
         </div>
       </div>
