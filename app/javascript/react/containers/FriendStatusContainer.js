@@ -14,17 +14,14 @@ class FriendStatusContainer extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     let friendships = []
     let userId = 0
 
     if(nextProps.friendships.length != 0) {
-      debugger
       userId = nextProps.userId
       friendships = nextProps.friendships
 
       friendships.forEach((friendship) => {
-        debugger
         if(userId == friendship.friend_id)
           this.setState({ friendshipStatus: true })
       })
@@ -52,7 +49,7 @@ class FriendStatusContainer extends React.Component {
           <ChatContainer
             userFirstname={this.props.userFirstname}
             userId={this.props.userId}
-            currentUser={this.props.currentUserId} />
+            currentUser={this.props.currentUser} />
       }
 
     return(
