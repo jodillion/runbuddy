@@ -80,7 +80,7 @@ Meet for a run with your new running partner!
 
 ## In Progress/Current Bugs
 
-* The chat feature does not persist messages yet. There seems to be an issue with the way I'm saving and then displaying messages in chat_channel.rb. There also is not yet the functionality of having multiple chatrooms.
+* The chat feature does not persist messages yet. There seems to be an error with the way I'm adding the messages to the current state of messages.
 * The search bar currently displays search results on top of the current athletes available. I plan to remove the duplicate data and display only all athletes or the search results, not both.
 * I do not currently have a way to send match requests but will be establishing self referential associations between the users table and friendships along with some logic that will hide the chat until a user accepts a match request from another user.
 * Photos that are uploaded by users directly to Strava are displayed at a much lower resolution than photos users that have their Strava accounts linked to their Facebook or Google accounts. I plan to implement CarrierWave with AWS cloud storage in the future to allow users to upload their own photos.
