@@ -39,9 +39,9 @@ class ChatContainer extends Component {
     })
     .then((data) => {
       debugger
-      return this.setState({ messages: this.state.messages.concat(data) })
+      this.setState({ messages: data })
     })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
 
     App.chatChannel = App.cable.subscriptions.create(
       {
@@ -56,7 +56,7 @@ class ChatContainer extends Component {
           this.handleMessageReceipt(data)
         }
       }
-    );
+    )
   }
 
   handleMessageReceipt(message) {
@@ -93,7 +93,6 @@ class ChatContainer extends Component {
           />
         )
       })
-    }
 
     return(
       <div className='chat-box'>
