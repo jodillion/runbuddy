@@ -9,6 +9,7 @@ class UsersContainer extends React.Component {
     this.state = {
       users: []
     }
+    this.handlePayload = this.handlePayload.bind(this)
   }
 
   componentDidMount() {
@@ -35,12 +36,35 @@ class UsersContainer extends React.Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  handlePayload(information) {
+    this.setState({ users: information.users })
+  }
+
   render() {
+    let users = this.state.users.map(user => {
+      return(
+        <UserTile
+          key={user.id}
+          id={user.id}
+          profile={user.profile}
+          firstname={user.firstname}
+          lastname={user.lastname}
+          sex={user.sex}
+          city={user.city}
+          state={user.state}
+        />
+      )
+    })
+
     return(
       <div>
         <h4 className="athlete-profile-header">FIND FOR YOUR IDEAL RUNNING PARTNER HERE</h4>
         <SearchBar
+          handlePayload={this.handlePayload}
           indexUsers={this.state.users} />
+        <div className="athlete-profile">
+          {users}
+        </div>
       </div>
 
     )

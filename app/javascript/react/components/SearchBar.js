@@ -32,50 +32,12 @@ class SearchBar extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ users: body })
+      debugger
+      this.props.handlePayload(body)
     })
   }
 
   render() {
-    let users;
-    
-      let searchUsers = this.state.users.map(user => {
-        debugger
-        return(
-          <UserTile
-            key={user.id}
-            id={user.id}
-            profile={user.profile}
-            firstname={user.firstname}
-            lastname={user.lastname}
-            sex={user.sex}
-            city={user.city}
-            state={user.state}
-          />
-        )
-      })
-
-      let indexUsers = this.props.indexUsers.map(user => {
-        return(
-          <UserTile
-            key={user.id}
-            id={user.id}
-            profile={user.profile}
-            firstname={user.firstname}
-            lastname={user.lastname}
-            sex={user.sex}
-            city={user.city}
-            state={user.state}
-          />
-        )
-      })
-
-    if (this.state.users.length != 0) {
-      users = searchUsers
-    } else if (this.state.users.length == 0){
-      users = indexUsers
-    }
-
     return(
       <div>
         <form className="search" onSubmit={this.handleSubmit}>
@@ -84,9 +46,6 @@ class SearchBar extends Component {
             <input className="large-2 button yellow cell" type='submit' value='Submit' />
           </div>
         </form>
-        <div className="search-results">
-          {users}
-        </div>
       </div>
     )
   }
