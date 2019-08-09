@@ -38,37 +38,42 @@ class SearchBar extends Component {
 
   render() {
     let users;
+    
+      let searchUsers = this.state.users.map(user => {
+        debugger
+        return(
+          <UserTile
+            key={user.id}
+            id={user.id}
+            profile={user.profile}
+            firstname={user.firstname}
+            lastname={user.lastname}
+            sex={user.sex}
+            city={user.city}
+            state={user.state}
+          />
+        )
+      })
+
+      let indexUsers = this.props.indexUsers.map(user => {
+        return(
+          <UserTile
+            key={user.id}
+            id={user.id}
+            profile={user.profile}
+            firstname={user.firstname}
+            lastname={user.lastname}
+            sex={user.sex}
+            city={user.city}
+            state={user.state}
+          />
+        )
+      })
+
     if (this.state.users.length != 0) {
-      let users = this.state.users.map(user => {
-        return(
-          <UserTile
-            key={user.id}
-            id={user.id}
-            profile={user.profile}
-            firstname={user.firstname}
-            lastname={user.lastname}
-            sex={user.sex}
-            city={user.city}
-            state={user.state}
-          />
-        )
-      })
+      users = searchUsers
     } else if (this.state.users.length == 0){
-      let users = this.props.indexUsers.map(user => {
-        return(
-          <UserTile
-            key={user.id}
-            id={user.id}
-            profile={user.profile}
-            firstname={user.firstname}
-            lastname={user.lastname}
-            sex={user.sex}
-            city={user.city}
-            state={user.state}
-          />
-        )
-      })
-      debugger
+      users = indexUsers
     }
 
     return(
