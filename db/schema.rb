@@ -18,8 +18,10 @@ ActiveRecord::Schema.define(version: 2019_08_06_131734) do
   create_table "chats", force: :cascade do |t|
     t.string "title"
     t.string "description"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_chats_on_user_id"
   end
 
   create_table "friendships", force: :cascade do |t|
@@ -38,23 +40,6 @@ ActiveRecord::Schema.define(version: 2019_08_06_131734) do
     t.datetime "updated_at", null: false
     t.index ["chat_id"], name: "index_messages_on_chat_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "stats", force: :cascade do |t|
-    t.string "age", null: false
-    t.string "desired_pace", null: false
-    t.string "up_to_distance", null: false
-    t.string "training_for"
-    t.string "preferred_surface"
-    t.string "recent_race1"
-    t.string "recent_race2"
-    t.string "recent_race3"
-    t.string "recent_race4"
-    t.string "recent_race5"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_stats_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

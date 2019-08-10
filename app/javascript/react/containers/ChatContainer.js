@@ -18,6 +18,8 @@ class ChatContainer extends Component {
   }
 
   componentDidMount() {
+    this.setState({ messages: this.props.messages})
+
     App.chatChannel = App.cable.subscriptions.create(
       {
         channel: "ChatChannel",
@@ -31,7 +33,7 @@ class ChatContainer extends Component {
           this.handleMessageReceipt(data)
         }
       }
-    );
+    )
   }
 
   handleMessageReceipt(message) {
@@ -62,12 +64,12 @@ class ChatContainer extends Component {
     let messages = this.state.messages.map(message => {
       return(
         <Message
-          key={message.messageId}
+          key={message.id}
           firstname={message.user.firstname}
-          message={message.message}
+          message={message.body}
         />
       )
-    }, this);
+    })
 
     return(
       <div className='chat-box'>

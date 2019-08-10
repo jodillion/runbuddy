@@ -11,20 +11,27 @@ class FriendStatusContainer extends React.Component {
       friendshipStatus: false
     }
     this.handleSendFriendRequest = this.handleSendFriendRequest.bind(this)
+    this.componentWillReceiveProps = this.componentWillReceiveProps.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
     let friendships = []
-    let userId = 0
+    let userId = nextProps.userId
+    let currentUserId = nextProps.currentUser.id
 
     if(nextProps.friendships.length != 0) {
       userId = nextProps.userId
       friendships = nextProps.friendships
 
       friendships.forEach((friendship) => {
-        if(userId == friendship.friend_id)
+        if(userId == friendship.friend_id || userId == currentUserId) {
           this.setState({ friendshipStatus: true })
+        }
       })
+    } else if (nextProps.friendships.length == 0 && userId == currentUserId) {
+      this.setState({ friendshipStatus: true })
+    } else {
+      this.setState({ friendshipStatus: false })
     }
   }
 
@@ -32,7 +39,7 @@ class FriendStatusContainer extends React.Component {
     event.preventDefault()
     debugger
     let formPayload = {
-      user_id: this.props.currentUserId,
+      user_id: this.props.currentUser.id,
       friend_id: this.props.userId
     }
     this.props.sendFriendRequest(formPayload)
@@ -48,6 +55,7 @@ class FriendStatusContainer extends React.Component {
       } else if (this.state.friendshipStatus == true) {
         visibleContainer =
           <ChatContainer
+            messages={this.props.messages}
             userFirstname={this.props.userFirstname}
             userId={this.props.userId}
             currentUser={this.props.currentUser} />

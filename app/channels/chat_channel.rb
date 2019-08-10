@@ -7,16 +7,16 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def receive(data)
-    chat = Chat.find_or_create_by(id: params[:chat_id])
+    chat = Chat.find_or_create_by!(user_id: params[:chat_id])
 
-    new_message = Message.create(body: data["message"], user: User.find(data["current_user"]["id"]))
+    new_message = Message.create!(body: data["message"], user: User.find(data["current_user"]["id"]), chat_id: chat.id)
     chat.messages << new_message
 
     chat_key = chat.id
 
     chat_json = {
       "chat_key": chat_key,
-      "message": new_message.body,
+      "body": new_message.body,
       "messageId": new_message.id,
       "user": data["current_user"]
     }
