@@ -73,7 +73,7 @@ That person can then choose to accept or deny the match request.
 If they accept, you will be able to view a chatroom where you can get to know each other and coordinate further details.
 
 
-![example chat](public/images/exampleChat.png)
+![example chat](public/images/examplechat.png)
 
 
 Meet for a run with your new running partner!
