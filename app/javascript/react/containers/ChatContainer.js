@@ -18,30 +18,7 @@ class ChatContainer extends Component {
   }
 
   componentDidMount() {
-    debugger
-    fetch('/api/v1/messages', {
-      credentials: 'same-origin',
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-    .then((response) => {
-      debugger
-      if (response.ok) {
-        return response.json();
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-        error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then((data) => {
-      debugger
-      this.setState({ messages: data })
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`))
+    this.setState({ messages: this.props.messages})
 
     App.chatChannel = App.cable.subscriptions.create(
       {
@@ -85,14 +62,14 @@ class ChatContainer extends Component {
 
   render() {
     let messages = this.state.messages.map(message => {
-        return(
-          <Message
-            key={message.messageId}
-            firstname={message.user.firstname}
-            message={message.message}
-          />
-        )
-      })
+      return(
+        <Message
+          key={message.id}
+          firstname={message.user.firstname}
+          message={message.body}
+        />
+      )
+    })
 
     return(
       <div className='chat-box'>

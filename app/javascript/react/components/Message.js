@@ -1,12 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-const Message = ({ firstname, message }) => {
+const Message = props => {
+
   return(
     <p>
-      <strong> {firstname}: </strong>
-      {message}
+      <strong> {props.firstname}: </strong>
+      {props.message}
     </p>
-  );
-};
+  )
+}
 
 export default Message;

@@ -13,7 +13,8 @@ class ShowUserContainer extends React.Component {
       user: {},
       friendship: null,
       friendships: [],
-      currentUser: {}
+      currentUser: {},
+      messages: []
     }
     this.sendFriendRequest = this.sendFriendRequest.bind(this)
   }
@@ -31,12 +32,13 @@ class ShowUserContainer extends React.Component {
     })
     .then((responseBody) => {
       return this.setState({
-        recent_run_totals: responseBody.strava_info.recent_run_totals,
-        all_run_totals: responseBody.strava_info.all_run_totals,
-        ytd_run_totals: responseBody.strava_info.ytd_run_totals,
+        recent_run_totals: responseBody.info.strava_info.recent_run_totals,
+        all_run_totals: responseBody.info.strava_info.all_run_totals,
+        ytd_run_totals: responseBody.info.strava_info.ytd_run_totals,
         user: responseBody.user,
-        friendships: responseBody.friendships,
-        currentUser: responseBody.currentuser
+        friendships: responseBody.info.friendships,
+        currentUser: responseBody.info.currentuser,
+        messages: responseBody.user.messages
        })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -116,6 +118,7 @@ class ShowUserContainer extends React.Component {
             friendships={this.state.friendships}
             currentUserId={this.state.currentUser.id}
             currentUser={this.state.currentUser}
+            messages={this.state.messages}
           />
         </div>
       </div>

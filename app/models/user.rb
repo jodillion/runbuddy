@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :access_token, :provider, :uid, presence: true
   validates :access_token, :uid, uniqueness: true
 
-  has_many :stats
+  has_one :chat
   has_many :messages
   has_many :friendships
   has_many :friends, through: :friendships
