@@ -70,17 +70,17 @@ When you find someone who might be a match, click "SEND MATCH REQUEST".
 That person can then choose to accept or deny the match request.
 
 
-If they accept, you will both be able to see to a chatroom where you can get to know each other and coordinate further details.
+If they accept, you will be able to view a chatroom where you can get to know each other and coordinate further details.
 
 
-![example chat](public/images/examplechat.png)
+![example chat](public/images/exampleChat.png)
 
 
 Meet for a run with your new running partner!
 
 ## In Progress/Current Bugs
 
-* The chat feature does not persist messages yet. There seems to be an error with the way I'm adding the messages to the current state of messages.
-* The search bar currently displays search results on top of the current athletes available. I plan to remove the duplicate data and display only all athletes or the search results, not both.
-* I do not currently have a way to send match requests but will be establishing self referential associations between the users table and friendships along with some logic that will hide the chat until a user accepts a match request from another user.
+* I do not currently have a way to accept or deny match requests yet but plan to implement a component that will have accept or deny buttons and a component that will show pending depending on which user sent the request.
+* Once you send a request, you need to refresh the page to see the chatroom. I plan to implement componentDidUpdate in order to render this without the refresh.
+* If you go to your profile, you will need to send a match request to yourself to see your chats. I plan to adjust the logic to reset the state if the current user matches the user show page.
 * Photos that are uploaded by users directly to Strava are displayed at a much lower resolution than photos users that have their Strava accounts linked to their Facebook or Google accounts. I plan to implement CarrierWave with AWS cloud storage in the future to allow users to upload their own photos.
