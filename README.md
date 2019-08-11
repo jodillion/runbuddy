@@ -2,7 +2,7 @@
 
 # Kiburi
 
-Find your ideal running or cycling partner by browsing other people's Strava profiles. Send a match request and if you are matched in return, you will be able to chat in order to coordinate a time to meet up and go on a run or ride.
+Find your ideal running partner by browsing other people's Strava profiles. Send a match request and if you are matched in return, you will be able to chat in order to coordinate a time to meet up and go on a run or ride.
 
 This React-Rails app allows uses OmniAuth to allow users to sign in with their Strava account.
 Users are then stored with Postgres SQL, with their running statistics displayed through the
