@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "validations" do
-    subject { FactoryGirl.create(:user) }
+    subject { FactoryBot.create(:user) }
   end
 
   it { should have_valid(:provider).when("Strava") }
