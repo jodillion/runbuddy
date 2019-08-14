@@ -41,12 +41,4 @@ describe("ShowUserContainer", () => {
     wrapper.setState({ user: [user] })
     expect(wrapper.find(ShowUserTile)).toBePresent()
   })
-
-  it("Should change the stats states to include user stats for the selected user", () => {
-    wrapper.setState({
-      recent_run_totals: {},
-      all_run_totals: {},
-      ytd_run_totals: {}
-    })
-  })
 })
