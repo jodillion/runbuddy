@@ -1,5 +1,5 @@
 import React from 'react'
-import jasimeEnzyme from 'jasmine-enzyme'
+import jasmineEnzyme from 'jasmine-enzyme'
 import Message from '../../../app/javascript/react/components/Message'
 
 describe('Message', () => {
