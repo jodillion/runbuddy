@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'shared_contexts'
 include Warden::Test::Helpers
 
 RSpec.describe Api::V1::UsersController, type: :controller do
