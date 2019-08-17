@@ -10,8 +10,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :messages, only: [:index]
-      resources :friendships, only: [:create]
       get "users/current" => "users#the_current_user"
       post 'users/search', to: 'users#search'
       resources :users, only: [:index, :show] do
