@@ -7,9 +7,8 @@ feature 'user registers', %Q{
 } do
 
  scenario 'sign up through Strava account' do
-   binding.pry
-   visit auth_strava_callback_path
-   click_button 'Authorize'
+   visit root_path
+   click_link 'Sign In'
 
    expect(page).to have_current_path(root_path)
    expect(page).to have_content('Sign Out')
