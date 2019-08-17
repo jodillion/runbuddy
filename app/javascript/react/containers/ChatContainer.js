@@ -23,7 +23,7 @@ class ChatContainer extends Component {
     App.chatChannel = App.cable.subscriptions.create(
       {
         channel: "ChatChannel",
-        chat_id: 1
+        chat_id: this.props.userId
       },
       {
         connected: () => console.log("ChatChannel connected"),
