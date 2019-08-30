@@ -8,7 +8,7 @@ This React-Rails app allows uses OmniAuth to allow users to sign in with their S
 Users are then stored with Postgres SQL, with their running statistics displayed through the
 third party Strava API. The ability to chat in real time is made possible through Action Cable.
 
-View it on Heroku at [Kiburi](http://www.kiburi.herokuapp.com)
+View it on Heroku at [Kiburi](https://www.kiburi.herokuapp.com)
 
 ## Setup
 
